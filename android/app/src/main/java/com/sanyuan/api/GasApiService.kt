@@ -36,7 +36,7 @@ interface GasApi {
 
 object GasApiClient {
     // GAS_URL 在 BuildConfig 中設定，或直接改這裡
-    private const val GAS_URL = "https://script.google.com/macros/s/YOUR_GAS_DEPLOYMENT_ID/exec/"
+    private const val GAS_URL = "https://script.google.com/macros/s/AKfycbxtEx31cvlMOrr4o8Go5fwqoyMV73t-GcFgroaSTH-OQ9aHHKG8uixpsKyf-zTQbfLa/exec/"
 
     val api: GasApi by lazy {
         Retrofit.Builder()

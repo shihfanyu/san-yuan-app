@@ -1,8 +1,5 @@
 {
   "buildCommand": "npm run build",
   "outputDirectory": ".next",
-  "framework": "nextjs",
-  "env": {
-    "GAS_API_URL": "@gas_api_url"
-  }
+  "framework": "nextjs"
 }
