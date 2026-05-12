@@ -182,17 +182,14 @@ export function computeChart(
   const sitCenter = getFromChart(periodChart, sitPalace);
   const facCenter = getFromChart(periodChart, facPalace);
 
-  // 基礎飛行方向
-  let sitForward = MOUNTAIN_YANG[mtn];
-  let facForward = MOUNTAIN_YANG[opp];
+  // 標準下卦法：飛行方向由期星奇偶決定（奇數=陽=順飛，偶數=陰=逆飛）
+  let sitForward = sitCenter % 2 === 1;
+  let facForward = facCenter % 2 === 1;
 
-  // 起星（替星法）：當坐山陰陽 ≠ 期星陰陽時，反轉飛行方向
+  // 起星（替星法）：改用山的固有陰陽決定飛行方向（四正=陽=順，四隅=陰=逆）
   if (isQiXing) {
-    const sitStarYang = sitCenter % 2 === 1;
-    if (MOUNTAIN_YANG[mtn] !== sitStarYang) sitForward = !sitForward;
-
-    const facStarYang = facCenter % 2 === 1;
-    if (MOUNTAIN_YANG[opp] !== facStarYang) facForward = !facForward;
+    sitForward = MOUNTAIN_YANG[mtn];
+    facForward = MOUNTAIN_YANG[opp];
   }
 
   const mountChart  = buildChart(sitCenter, sitForward);

@@ -137,14 +137,14 @@ fun computeChart(
     val sitCenter = getFromChart(periodChart, sitPalace)
     val facCenter = getFromChart(periodChart, facPalace)
 
-    var sitForward = MOUNTAIN_YANG[mtn] ?: true
-    var facForward = MOUNTAIN_YANG[opp] ?: true
+    // 標準下卦法：奇數=陽=順飛，偶數=陰=逆飛
+    var sitForward = sitCenter % 2 == 1
+    var facForward = facCenter % 2 == 1
 
+    // 起星（替星法）：改用山的固有陰陽（四正=順，四隅=逆）
     if (isQiXing) {
-        val sitStarYang = sitCenter % 2 == 1
-        if ((MOUNTAIN_YANG[mtn] ?: true) != sitStarYang) sitForward = !sitForward
-        val facStarYang = facCenter % 2 == 1
-        if ((MOUNTAIN_YANG[opp] ?: true) != facStarYang) facForward = !facForward
+        sitForward = MOUNTAIN_YANG[mtn] ?: true
+        facForward = MOUNTAIN_YANG[opp] ?: true
     }
 
     val mountChart  = buildChart(sitCenter, sitForward)
