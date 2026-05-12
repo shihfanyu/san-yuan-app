@@ -1,0 +1,4 @@
+-keep class com.sanyuan.model.** { *; }
+-keep class com.sanyuan.api.** { *; }
+-keepattributes Signature
+-dontwarn retrofit2.**

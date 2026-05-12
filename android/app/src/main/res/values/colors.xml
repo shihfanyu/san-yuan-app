@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="amber_700">#B45309</color>
+    <color name="fire_bg">#FEE2E2</color>
+    <color name="center_bg">#FFFBEB</color>
+    <color name="border">#D1D5DB</color>
+</resources>

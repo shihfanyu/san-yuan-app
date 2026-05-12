@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Theme.SanYuan" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="colorPrimary">#B45309</item>
+        <item name="colorPrimaryVariant">#92400E</item>
+        <item name="colorOnPrimary">#FFFFFF</item>
+        <item name="colorSecondary">#D97706</item>
+        <item name="colorOnSecondary">#FFFFFF</item>
+        <item name="android:windowBackground">#FFF8E7</item>
+        <item name="actionBarStyle">@style/ActionBar.SanYuan</item>
+    </style>
+
+    <style name="ActionBar.SanYuan" parent="Widget.AppCompat.ActionBar">
+        <item name="background">#92400E</item>
+        <item name="titleTextStyle">@style/ActionBarTitle</item>
+    </style>
+
+    <style name="ActionBarTitle" parent="TextAppearance.AppCompat.Widget.ActionBar.Title">
+        <item name="android:textColor">#FFFFFF</item>
+    </style>
+
+    <style name="InputStyle">
+        <item name="android:background">@drawable/spinner_bg</item>
+        <item name="android:padding">10dp</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:layout_marginTop">4dp</item>
+        <item name="android:layout_marginBottom">4dp</item>
+    </style>
+</resources>

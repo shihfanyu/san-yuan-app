@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#FFF8E7"
+    android:padding="12dp">
+
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:orientation="horizontal" android:layout_marginBottom="8dp">
+        <EditText android:id="@+id/etSearch"
+            android:layout_width="0dp" android:layout_height="48dp"
+            android:layout_weight="1"
+            android:hint="輸入屋主或地址關鍵字..."
+            android:inputType="text"
+            android:background="@drawable/spinner_bg"
+            android:paddingHorizontal="12dp"/>
+        <Button android:id="@+id/btnSearch"
+            android:layout_width="wrap_content" android:layout_height="48dp"
+            android:text="搜尋"
+            android:backgroundTint="#D97706"
+            android:textColor="#FFFFFF"
+            android:layout_marginStart="8dp"/>
+    </LinearLayout>
+
+    <TextView android:id="@+id/tvCount"
+        android:layout_width="wrap_content" android:layout_height="wrap_content"
+        android:text="" android:textSize="12sp" android:textColor="#9CA3AF"
+        android:layout_marginBottom="8dp"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvRecords"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"/>
+
+</LinearLayout>

@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFF8E7">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- 標題 -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="☯ 三元玄空挨星排盤"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="#92400E"
+            android:paddingBottom="12dp"
+            android:paddingTop="4dp" />
+
+        <!-- 日期 -->
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="日期" android:textSize="12sp" android:textColor="#6B7280"/>
+        <EditText android:id="@+id/etDate"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:inputType="date" android:hint="yyyy-MM-dd"
+            style="@style/InputStyle"/>
+
+        <!-- 運 -->
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="運" android:textSize="12sp" android:textColor="#6B7280"
+            android:layout_marginTop="8dp"/>
+        <Spinner android:id="@+id/spinnerYun"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:background="@drawable/spinner_bg"
+            android:padding="10dp"/>
+
+        <!-- 山 -->
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="山（坐山）" android:textSize="12sp" android:textColor="#6B7280"
+            android:layout_marginTop="8dp"/>
+        <Spinner android:id="@+id/spinnerMountain"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:background="@drawable/spinner_bg"
+            android:padding="10dp"/>
+
+        <!-- 視角 -->
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="視角" android:textSize="12sp" android:textColor="#6B7280"
+            android:layout_marginTop="8dp"/>
+        <Spinner android:id="@+id/spinnerShijiao"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:background="@drawable/spinner_bg"
+            android:padding="10dp"/>
+
+        <!-- 屋主 -->
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="屋主" android:textSize="12sp" android:textColor="#6B7280"
+            android:layout_marginTop="8dp"/>
+        <EditText android:id="@+id/etOwner"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:hint="屋主姓名" android:inputType="text"
+            style="@style/InputStyle"/>
+
+        <!-- 地址 -->
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="地址" android:textSize="12sp" android:textColor="#6B7280"
+            android:layout_marginTop="8dp"/>
+        <EditText android:id="@+id/etAddress"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:hint="房屋地址" android:inputType="text"
+            style="@style/InputStyle"/>
+
+        <!-- 角度 -->
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="角度 (0-360°)" android:textSize="12sp" android:textColor="#6B7280"
+            android:layout_marginTop="8dp"/>
+        <EditText android:id="@+id/etAngle"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:hint="羅盤角度" android:inputType="numberDecimal"
+            style="@style/InputStyle"/>
+
+        <!-- 火坑 / 起星 -->
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:orientation="horizontal" android:layout_marginTop="12dp">
+            <CheckBox android:id="@+id/checkFire"
+                android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="🔥 火坑" android:textColor="#B91C1C"/>
+            <CheckBox android:id="@+id/checkQiXing"
+                android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="⭐ 起星（替星法）" android:textColor="#B45309"
+                android:layout_marginStart="24dp"/>
+        </LinearLayout>
+
+        <!-- 堪輿註解 -->
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="堪輿註解" android:textSize="12sp" android:textColor="#6B7280"
+            android:layout_marginTop="8dp"/>
+        <EditText android:id="@+id/etNotes"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:hint="補充說明..." android:inputType="textMultiLine"
+            android:minLines="2"
+            style="@style/InputStyle"/>
+
+        <!-- 按鈕 -->
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:orientation="horizontal" android:layout_marginTop="16dp"
+            android:gravity="center">
+            <Button android:id="@+id/btnChart"
+                android:layout_width="0dp" android:layout_height="48dp"
+                android:layout_weight="1"
+                android:text="排盤"
+                android:backgroundTint="#D97706"
+                android:textColor="#FFFFFF"
+                android:layout_marginEnd="8dp"/>
+            <Button android:id="@+id/btnSave"
+                android:layout_width="0dp" android:layout_height="48dp"
+                android:layout_weight="1"
+                android:text="儲存"
+                android:backgroundTint="#15803D"
+                android:textColor="#FFFFFF"
+                android:layout_marginEnd="8dp"/>
+            <Button android:id="@+id/btnSearch"
+                android:layout_width="0dp" android:layout_height="48dp"
+                android:layout_weight="1"
+                android:text="查詢"
+                android:backgroundTint="#1D4ED8"
+                android:textColor="#FFFFFF"/>
+        </LinearLayout>
+
+    </LinearLayout>
+</ScrollView>
