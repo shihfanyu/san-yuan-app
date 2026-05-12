@@ -137,8 +137,9 @@ fun computeChart(
     val sitCenter = getFromChart(periodChart, sitPalace)
     val facCenter = getFromChart(periodChart, facPalace)
 
-    // 標準下卦法：奇數=陽=順飛，偶數=陰=逆飛；五黃(5)無陰陽改用宮位奇偶
-    fun flyDir(star: Int, palace: Int) = if (star == 5) palace % 2 == 1 else star % 2 == 1
+    // 標準下卦法：五黃(5)永遠逆飛；其他：星與宮異陰陽→順飛，同陰陽→逆飛
+    fun flyDir(star: Int, palace: Int) =
+        if (star == 5) false else (star % 2 == 1) != (palace % 2 == 1)
     var sitForward = flyDir(sitCenter, sitPalace)
     var facForward = flyDir(facCenter, facPalace)
 

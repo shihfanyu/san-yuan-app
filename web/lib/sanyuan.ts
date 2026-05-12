@@ -182,10 +182,11 @@ export function computeChart(
   const sitCenter = getFromChart(periodChart, sitPalace);
   const facCenter = getFromChart(periodChart, facPalace);
 
-  // 標準下卦法：飛行方向由期星奇偶決定（奇數=陽=順飛，偶數=陰=逆飛）
-  // 五黃(5)無固有陰陽，改用來源宮位編號奇偶判斷
-  const flyDir = (star: number, palace: number) =>
-    star === 5 ? palace % 2 === 1 : star % 2 === 1;
+  // 標準下卦法：
+  //   五黃(5) → 永遠逆飛
+  //   其他    → 星與宮位「異陰陽」→ 順飛；「同陰陽」→ 逆飛
+  const flyDir = (star: number, palace: number): boolean =>
+    star === 5 ? false : (star % 2 === 1) !== (palace % 2 === 1);
   let sitForward = flyDir(sitCenter, sitPalace);
   let facForward = flyDir(facCenter, facPalace);
 
